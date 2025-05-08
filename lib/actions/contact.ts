@@ -49,58 +49,58 @@ export async function createContact(data: ContactFormData) {
     });
 
     // Send email notification
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_SERVER_HOST,
-      port: Number(process.env.EMAIL_SERVER_PORT),
-      secure: false, // true for 465, false for other ports
-      auth: {
-        user: process.env.EMAIL_SERVER_USER,
-        pass: process.env.EMAIL_SERVER_PASSWORD,
-      },
-    });
+    // const transporter = nodemailer.createTransport({
+    //   host: process.env.EMAIL_SERVER_HOST,
+    //   port: Number(process.env.EMAIL_SERVER_PORT),
+    //   secure: false, // true for 465, false for other ports
+    //   auth: {
+    //     user: process.env.EMAIL_SERVER_USER,
+    //     pass: process.env.EMAIL_SERVER_PASSWORD,
+    //   },
+    // });
 
     // Send mail to team
-    await transporter.sendMail({
-      from: process.env.EMAIL_FROM,
-      to: process.env.EMAIL_SERVER_USER,
-      subject: `New Contact Form: ${validatedData.subject}`,
-      text: `
-Name: ${validatedData.name}
-Email: ${validatedData.email}
-Subject: ${validatedData.subject}
-Message:
-${validatedData.message}
-      `,
-      html: `
-<h2>New Contact Form Submission</h2>
-<p><strong>Name:</strong> ${validatedData.name}</p>
-<p><strong>Email:</strong> ${validatedData.email}</p>
-<p><strong>Subject:</strong> ${validatedData.subject}</p>
-<p><strong>Message:</strong></p>
-<p>${validatedData.message}</p>
-      `,
-    });
+    //     await transporter.sendMail({
+    //       from: process.env.EMAIL_FROM,
+    //       to: process.env.EMAIL_SERVER_USER,
+    //       subject: `New Contact Form: ${validatedData.subject}`,
+    //       text: `
+    // Name: ${validatedData.name}
+    // Email: ${validatedData.email}
+    // Subject: ${validatedData.subject}
+    // Message:
+    // ${validatedData.message}
+    //       `,
+    //       html: `
+    // <h2>New Contact Form Submission</h2>
+    // <p><strong>Name:</strong> ${validatedData.name}</p>
+    // <p><strong>Email:</strong> ${validatedData.email}</p>
+    // <p><strong>Subject:</strong> ${validatedData.subject}</p>
+    // <p><strong>Message:</strong></p>
+    // <p>${validatedData.message}</p>
+    //       `,
+    //     });
 
-    // Send confirmation to user
-    await transporter.sendMail({
-      from: process.env.EMAIL_FROM,
-      to: validatedData.email,
-      subject: "Thank you for contacting us",
-      text: `
-Hello ${validatedData.name},
+    //     // Send confirmation to user
+    //     await transporter.sendMail({
+    //       from: process.env.EMAIL_FROM,
+    //       to: validatedData.email,
+    //       subject: "Thank you for contacting us",
+    //       text: `
+    // Hello ${validatedData.name},
 
-Thank you for reaching out to us. We have received your message and will get back to you shortly.
+    // Thank you for reaching out to us. We have received your message and will get back to you shortly.
 
-Regards,
-The Team
-      `,
-      html: `
-<h2>Thank You For Contacting Us</h2>
-<p>Hello ${validatedData.name},</p>
-<p>Thank you for reaching out to us. We have received your message and will get back to you shortly.</p>
-<p>Regards,<br>The Team</p>
-      `,
-    });
+    // Regards,
+    // The Team
+    //       `,
+    //       html: `
+    // <h2>Thank You For Contacting Us</h2>
+    // <p>Hello ${validatedData.name},</p>
+    // <p>Thank you for reaching out to us. We have received your message and will get back to you shortly.</p>
+    // <p>Regards,<br>The Team</p>
+    //       `,
+    //     });
 
     revalidatePath("/admin/contacts");
     revalidatePath("/");

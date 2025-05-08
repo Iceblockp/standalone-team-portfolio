@@ -42,7 +42,7 @@ export function SiteHeader() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold">
           <span className="font-poppins">
-            Studio<span className="text-primary">Flow</span>
+            Inno<span className="text-primary">Vate</span>
           </span>
         </Link>
 
@@ -69,11 +69,7 @@ export function SiteHeader() {
             className="ml-2"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
       </div>

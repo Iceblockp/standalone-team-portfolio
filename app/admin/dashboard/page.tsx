@@ -7,15 +7,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getContacts } from "@/lib/actions/contact";
 import { getSolutions } from "@/lib/actions/solutions";
-import { 
-  Users, 
-  Briefcase, 
-  MessageSquare, 
-  Lightbulb, 
-  ArrowRightCircle
+import {
+  Users,
+  Briefcase,
+  MessageSquare,
+  Lightbulb,
+  ArrowRightCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { getProjects } from "@/lib/actions/projects";
+import { getTeamMembers } from "@/lib/actions/team";
 
 export default function DashboardPage() {
   const { data: session } = useSession();
@@ -29,19 +31,21 @@ export default function DashboardPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [solutionsData, contactsData] = await Promise.all([
-          getSolutions(),
-          getContacts(),
-        ]);
+        const [solutionsData, contactsData, projectData, teamMemberData] =
+          await Promise.all([
+            getSolutions(),
+            getContacts(),
+            getProjects(),
+            getTeamMembers(),
+          ]);
 
-        const unreadMessages = contactsData.contacts?.filter(
-          (contact) => !contact.read
-        ).length || 0;
+        const unreadMessages =
+          contactsData.contacts?.filter((contact) => !contact.read).length || 0;
 
         setStats({
           solutions: solutionsData.solutions?.length || 0,
-          team: 3, // Placeholder
-          projects: 5, // Placeholder
+          team: teamMemberData.teamMembers?.length || 0, // Placeholder
+          projects: projectData.projects?.length || 0, // Placeholder
           unreadMessages,
         });
       } catch (error) {
@@ -56,7 +60,7 @@ export default function DashboardPage() {
     <AdminLayout>
       <div className="p-6">
         <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
-        
+
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <Card>
@@ -68,7 +72,7 @@ export default function DashboardPage() {
               <Users className="h-10 w-10 text-primary opacity-80" />
             </CardContent>
           </Card>
-          
+
           <Card>
             <CardContent className="p-6 flex items-center justify-between">
               <div>
@@ -78,7 +82,7 @@ export default function DashboardPage() {
               <Briefcase className="h-10 w-10 text-primary opacity-80" />
             </CardContent>
           </Card>
-          
+
           <Card>
             <CardContent className="p-6 flex items-center justify-between">
               <div>
@@ -88,7 +92,7 @@ export default function DashboardPage() {
               <Lightbulb className="h-10 w-10 text-primary opacity-80" />
             </CardContent>
           </Card>
-          
+
           <Card>
             <CardContent className="p-6 flex items-center justify-between">
               <div>
@@ -99,13 +103,13 @@ export default function DashboardPage() {
             </CardContent>
           </Card>
         </div>
-        
+
         <Tabs defaultValue="manage">
           <TabsList className="mb-6">
             <TabsTrigger value="manage">Quick Actions</TabsTrigger>
             <TabsTrigger value="recent">Recent Activity</TabsTrigger>
           </TabsList>
-          
+
           <TabsContent value="manage">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Card>
@@ -117,7 +121,8 @@ export default function DashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Manage your team profiles, add new members, or update existing information.
+                    Manage your team profiles, add new members, or update
+                    existing information.
                   </p>
                   <Button asChild>
                     <Link href="/admin/team">
@@ -127,7 +132,7 @@ export default function DashboardPage() {
                   </Button>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
@@ -137,7 +142,8 @@ export default function DashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Add new projects, edit project details, or manage project categories.
+                    Add new projects, edit project details, or manage project
+                    categories.
                   </p>
                   <Button asChild>
                     <Link href="/admin/projects">
@@ -147,7 +153,7 @@ export default function DashboardPage() {
                   </Button>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
@@ -157,7 +163,8 @@ export default function DashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    View and respond to contact form messages from your website visitors.
+                    View and respond to contact form messages from your website
+                    visitors.
                   </p>
                   <Button asChild>
                     <Link href="/admin/contacts">
@@ -169,7 +176,7 @@ export default function DashboardPage() {
               </Card>
             </div>
           </TabsContent>
-          
+
           <TabsContent value="recent">
             <Card>
               <CardHeader>
@@ -177,7 +184,8 @@ export default function DashboardPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-center text-muted-foreground py-8">
-                  Activity tracking will be displayed here once we have data to show.
+                  Activity tracking will be displayed here once we have data to
+                  show.
                 </p>
               </CardContent>
             </Card>
