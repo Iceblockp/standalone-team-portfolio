@@ -252,7 +252,9 @@ export default async function Home() {
     if (dbHero) heroData = dbHero;
     if (dbSolutions.length > 0) solutions = dbSolutions;
     if (dbWorkProcess.length > 0) workProcess = dbWorkProcess;
+    // @ts-ignore
     if (dbTeamMembers.length > 0) teamMembers = dbTeamMembers;
+    // @ts-ignore
     if (dbProjects.length > 0) projects = dbProjects;
     if (dbTechnologies.length > 0) technologies = dbTechnologies;
   } catch (error) {

@@ -27,7 +27,7 @@ export default function CategoriesPage() {
   const fetchCategories = async () => {
     const response = await getProjects();
     if (response.projects) {
-      const uniqueCategories = [...new Set(response.projects.map(project => project.category))];
+      const uniqueCategories = Array.from(new Set(response.projects.map(project => project.category)));
       setCategories(uniqueCategories);
     }
     setIsLoading(false);

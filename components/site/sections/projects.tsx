@@ -25,11 +25,15 @@ type ProjectsProps = {
 
 export function Projects({ data }: ProjectsProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const categories = ["all", ...new Set(data.map(project => project.category))];
+  const categories = [
+    "all",
+    ...Array.from(new Set(data.map((project) => project.category))),
+  ];
 
-  const filteredProjects = selectedCategory === "all"
-    ? data
-    : data.filter(project => project.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === "all"
+      ? data
+      : data.filter((project) => project.category === selectedCategory);
 
   return (
     <section id="projects" className="py-20 bg-muted/30">
@@ -80,11 +84,13 @@ export function Projects({ data }: ProjectsProps) {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {project.title}
+                  </h3>
                   <p className="text-muted-foreground mb-4 line-clamp-2">
                     {project.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech) => (
                       <Badge key={tech} variant="secondary">
