@@ -186,12 +186,13 @@ export default function TermsPage() {
                   </p>
                   <div className="mt-4 p-4 bg-muted/30 rounded-lg">
                     <p className="text-muted-foreground">
-                      <strong>Email:</strong> legal@studioflow.com
+                      <strong>Email:</strong> office@innobytex.com
                       <br />
-                      <strong>Address:</strong> 123 Innovation Street, Tech
-                      District, San Francisco, CA 94105
+                      <strong>Address:</strong> No.Nga-4/89, 64th St 108 & 109
+                      St, ChanMyathazi Township, Mandalay, Myanmar
                       <br />
-                      <strong>Phone:</strong> +1 (555) 123-4567
+                      <strong>Phone:</strong> +959 408 688 648 , +959 425 743
+                      536, +959 797 961 628
                     </p>
                   </div>
                 </section>

@@ -10,6 +10,7 @@ import { CustomCursor } from "@/components/site/custom-cursor";
 import { prisma } from "@/lib/prisma";
 import { TeamMember } from "@prisma/client";
 import { SiteFooter } from "@/components/site/site-footer";
+import { About } from "@/components/site/sections/about";
 
 const defaultHero = {
   id: "placeholder",
@@ -222,8 +223,28 @@ const defaultTechnologies = [
   },
 ];
 
+const defaultAbout = {
+  id: "placeholder",
+  title: "Who We Are",
+  subtitle: "Passionate Team of Digital Innovators",
+  description:
+    "Founded in 2025, our team brings together experts in design, development, and digital strategy. We believe in creating digital solutions that not only look great but deliver real results for our clients. Our collaborative approach ensures that every project we undertake is tailored to meet the unique needs and goals of our clients.",
+  imageUrl:
+    "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  features: [
+    "Client-focused approach with personalized solutions",
+    "Agile development methodology for faster delivery",
+    "Continuous support and maintenance",
+    "Cutting-edge technologies and best practices",
+    "Transparent communication throughout the project",
+  ],
+  createdAt: new Date(),
+  updatedAt: new Date(),
+};
+
 export default async function Home() {
   let heroData = defaultHero;
+  let aboutData = defaultAbout;
   let solutions = defaultSolutions;
   let workProcess = defaultWorkProcess;
   let teamMembers = defaultTeamMembers;
@@ -250,6 +271,7 @@ export default async function Home() {
 
     // Use database data if available, otherwise keep defaults
     if (dbHero) heroData = dbHero;
+    // if (dbAbout) aboutData = dbAbout;
     if (dbSolutions.length > 0) solutions = dbSolutions;
     if (dbWorkProcess.length > 0) workProcess = dbWorkProcess;
     // @ts-ignore
@@ -267,6 +289,7 @@ export default async function Home() {
       <CustomCursor />
       <SiteHeader />
       <Hero data={heroData} />
+      <About data={aboutData} />
       <Solutions data={solutions} />
       <WorkProcess data={workProcess} />
       <Team data={teamMembers} />

@@ -273,21 +273,20 @@ export default function PrivacyPage() {
                           General Inquiries
                         </h4>
                         <p className="text-muted-foreground text-sm">
-                          <strong>Email:</strong> privacy@studioflow.com
+                          <strong>Email:</strong> office@innobytex.com
                           <br />
-                          <strong>Phone:</strong> +1 (555) 123-4567
+                          <strong>Phone:</strong> +959 408 688 648 , +959 425
+                          743 536, +959 797 961 628
                         </p>
                       </div>
                       <div>
                         <h4 className="font-semibold mb-2">Mailing Address</h4>
                         <p className="text-muted-foreground text-sm">
-                          StudioFlow Privacy Team
+                          No.Nga-4/89, 64th St 108 & 109 St,
                           <br />
-                          123 Innovation Street
+                          ChanMyathazi Township, Mandalay
                           <br />
-                          Tech District
-                          <br />
-                          San Francisco, CA 94105
+                          Myanmar
                         </p>
                       </div>
                     </div>

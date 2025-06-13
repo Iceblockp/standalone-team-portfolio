@@ -41,8 +41,8 @@ export function SiteHeader() {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold">
-          <span className="font-poppins">
-            INNO<span className="text-primary text-[#c41e2a]">BYTEX</span>
+          <span className="font-poppins text-primary ">
+            INNO<span className=" text-[#c41e2a]">BYTEX</span>
           </span>
         </Link>
 

@@ -21,21 +21,22 @@ const footerLinks = {
     { label: "Consulting", href: "#contact" },
   ],
   company: [
-    { label: "About Us", href: "#team" },
+    { label: "About Us", href: "#about" },
     { label: "Our Process", href: "#process" },
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
   ],
   resources: [
-    { label: "Blog", href: "#" },
-    { label: "Case Studies", href: "#projects" },
+    // { label: "Blog", href: "#" },
+    // { label: "Case Studies", href: "#projects" },
     { label: "Tech Stack", href: "#tech" },
-    { label: "Careers", href: "#" },
+    // { label: "Careers", href: "#" },
   ],
 };
 
 const contactInfo = {
-  address: "No.Nga-4/89, 64th St 108 & 109 St, ChanMyathazi Township, Mandalay",
+  address:
+    "No.Nga-4/89, 64th St 108 & 109 St, ChanMyathazi Township, Mandalay , Myanmar",
   phone: "+959 408 688 648 , +959 425 743 536, +959 797 961 628  ",
   email: "office@innobytex.com",
 };
@@ -44,10 +45,10 @@ const socialLinks = [
   //   { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
   {
     icon: Linkedin,
-    href: "https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bq3AYr2LdQ%2F6CcXHAtdnGbg%3D%3D",
+    href: "https://www.linkedin.com/company/105864548",
     label: "LinkedIn",
   },
-  { icon: Github, href: "https://github.com/Iceblockp", label: "GitHub" },
+  // { icon: Github, href: "https://github.com/Iceblockp", label: "GitHub" },
 ];
 
 export function SiteFooter() {
@@ -64,9 +65,9 @@ export function SiteFooter() {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <Link href="/" className="inline-block mb-6">
-                <span className="text-2xl font-bold font-poppins  ">
+                <span className="text-2xl font-bold font-poppins text-primary ">
                   INNO
-                  <span className="text-primary text-[#c41e2a] ">BYTEX</span>
+                  <span className=" text-[#c41e2a] ">BYTEX</span>
                 </span>
               </Link>
               <p className="text-muted-foreground mb-6 max-w-md">
