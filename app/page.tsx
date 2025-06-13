@@ -9,6 +9,7 @@ import { SiteHeader } from "@/components/site/site-header";
 import { CustomCursor } from "@/components/site/custom-cursor";
 import { prisma } from "@/lib/prisma";
 import { TeamMember } from "@prisma/client";
+import { SiteFooter } from "@/components/site/site-footer";
 
 const defaultHero = {
   id: "placeholder",
@@ -16,8 +17,7 @@ const defaultHero = {
   subtitle: "We turn ideas into exceptional digital products",
   description:
     "A forward-thinking team of designers and developers creating innovative solutions that help businesses grow and succeed in the digital landscape.",
-  imageUrl:
-    "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1920",
+  imageUrl: "/images/image.png",
   buttonText: "Get in Touch",
   buttonUrl: "#contact",
   createdAt: new Date(),
@@ -273,6 +273,7 @@ export default async function Home() {
       <Projects data={projects} />
       <TechStack data={technologies} />
       <Contact />
+      <SiteFooter />
     </main>
   );
 }

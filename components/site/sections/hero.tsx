@@ -44,27 +44,30 @@ export function Hero({ data }: HeroProps) {
   };
 
   return (
-    <section className="relative h-screen flex items-center overflow-hidden" id="hero">
+    <section
+      className="relative h-screen flex items-center overflow-hidden"
+      id="hero"
+    >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0" />
+      <div className="absolute  inset-0 bg-gradient-to-b from-background/40 to-primary/40 z-[1]" />
 
       {/* Parallax background image with overlay */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 z-0"
           style={{
             transform: `translateY(${scrollY * 0.5}px)`,
             backgroundImage: `url('${data.imageUrl}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'brightness(0.7)',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "brightness(0.7)",
           }}
         />
       </div>
 
       {/* Content */}
       <div className="container relative z-10 mx-auto px-4 flex flex-col items-center text-center">
-        <motion.h1 
+        <motion.h1
           className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 font-poppins"
           initial="hidden"
           animate="visible"
@@ -73,8 +76,8 @@ export function Hero({ data }: HeroProps) {
         >
           {data.title}
         </motion.h1>
-        
-        <motion.h2 
+
+        <motion.h2
           className="text-xl md:text-2xl lg:text-3xl font-medium text-white/90 mb-6"
           initial="hidden"
           animate="visible"
@@ -83,8 +86,8 @@ export function Hero({ data }: HeroProps) {
         >
           {data.subtitle}
         </motion.h2>
-        
-        <motion.p 
+
+        <motion.p
           className="text-base md:text-lg text-white/80 max-w-2xl mb-8"
           initial="hidden"
           animate="visible"
@@ -93,7 +96,7 @@ export function Hero({ data }: HeroProps) {
         >
           {data.description}
         </motion.p>
-        
+
         {data.buttonText && data.buttonUrl && (
           <motion.div
             initial="hidden"
@@ -110,7 +113,7 @@ export function Hero({ data }: HeroProps) {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
         animate={{
           y: [0, 10, 0],
         }}
@@ -120,8 +123,8 @@ export function Hero({ data }: HeroProps) {
           repeatType: "loop",
         }}
       >
-        <div className="w-8 h-12 border-2 border-white/50 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-2 bg-white/70 rounded-full" />
+        <div className="w-8 h-12 border-2 dark:border-black/90 border-white/90 rounded-full flex justify-center pt-2">
+          <div className="w-1 h-2 dark:bg-black/90 bg-white/90 rounded-full" />
         </div>
       </motion.div>
     </section>

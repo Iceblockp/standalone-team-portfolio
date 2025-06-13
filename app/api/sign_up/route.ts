@@ -13,7 +13,7 @@ export async function GET() {
   //     );
   //   }
   try {
-    registerUser({
+    await registerUser({
       email: "ksl124980@gmail.com",
       name: "admin",
       password: "Admin@123",
