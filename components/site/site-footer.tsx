@@ -10,8 +10,14 @@ import {
   Linkedin,
   Github,
   ArrowUp,
+  Sparkles,
+  Heart,
+  Send,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Typography } from "@/components/ui/typography";
+import { IconButton, ModernButton } from "@/components/ui/modern-button";
+import { ScrollReveal } from "@/components/animations/motion-components";
+import { MinimalFloatingElements } from "@/components/ui/floating-elements";
 
 const footerLinks = {
   services: [
@@ -57,122 +63,241 @@ export function SiteFooter() {
   };
 
   return (
-    <footer className="bg-background border-t">
-      <div className="container mx-auto px-4">
+    <footer className="relative bg-gradient-to-br from-neutral-900 to-primary-950 text-white overflow-hidden">
+      {/* Floating elements */}
+      <MinimalFloatingElements colors="accent" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Newsletter Section */}
+        <ScrollReveal type="up">
+          <div className="py-16 border-b border-white/10">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Sparkles className="w-6 h-6 text-accent-cyan" />
+                <Typography.Heading size="lg" className="text-white">
+                  Stay Updated
+                </Typography.Heading>
+              </div>
+              <Typography.Body
+                size="lg"
+                className="text-white/80 mb-8 max-w-2xl mx-auto"
+              >
+                Get the latest insights on digital innovation, design trends,
+                and technology updates delivered to your inbox.
+              </Typography.Body>
+
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-4 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-accent-cyan"
+                />
+                <ModernButton
+                  variant="gradient"
+                  icon={<Send className="w-4 h-4" />}
+                  iconPosition="right"
+                >
+                  Subscribe
+                </ModernButton>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+
         {/* Main Footer Content */}
         <div className="py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Company Info */}
-            <div className="lg:col-span-2">
-              <Link href="/" className="inline-block mb-6">
-                <span className="text-2xl font-bold font-poppins text-primary ">
-                  INNO
-                  <span className=" text-[#c41e2a] ">BYTEX</span>
-                </span>
+            <motion.div
+              className="lg:col-span-2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+            >
+              <Link href="/" className="inline-block mb-6 group">
+                <div className="flex items-center gap-2">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shadow-lg group-hover:shadow-glow transition-all duration-300">
+                    <Sparkles className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-2xl font-bold font-secondary">
+                    INNO<span className="text-accent-orange">BYTEX</span>
+                  </span>
+                </div>
               </Link>
-              <p className="text-muted-foreground mb-6 max-w-md">
+
+              <Typography.Body
+                size="lg"
+                className="text-white/80 mb-6 max-w-md"
+              >
                 We're a creative digital agency passionate about transforming
                 ideas into exceptional digital experiences that drive business
                 growth.
-              </p>
+              </Typography.Body>
 
               {/* Contact Information */}
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-muted-foreground">
+              <div className="space-y-4">
+                <motion.div
+                  className="flex items-start gap-3 group cursor-pointer"
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <MapPin className="h-5 w-5 text-accent-cyan mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
+                  <Typography.Body
+                    size="sm"
+                    className="text-white/70 group-hover:text-white/90 transition-colors duration-200"
+                  >
                     {contactInfo.address}
-                  </p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                  <a
-                    href={`tel:${contactInfo.phone}`}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  </Typography.Body>
+                </motion.div>
+
+                <motion.a
+                  href={`tel:${contactInfo.phone}`}
+                  className="flex items-center gap-3 group"
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Phone className="h-5 w-5 text-accent-green flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
+                  <Typography.Body
+                    size="sm"
+                    className="text-white/70 group-hover:text-white/90 transition-colors duration-200"
                   >
                     {contactInfo.phone}
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                  <a
-                    href={`mailto:${contactInfo.email}`}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  </Typography.Body>
+                </motion.a>
+
+                <motion.a
+                  href={`mailto:${contactInfo.email}`}
+                  className="flex items-center gap-3 group"
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Mail className="h-5 w-5 text-accent-purple flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
+                  <Typography.Body
+                    size="sm"
+                    className="text-white/70 group-hover:text-white/90 transition-colors duration-200"
                   >
                     {contactInfo.email}
-                  </a>
-                </div>
+                  </Typography.Body>
+                </motion.a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Services */}
-            <div>
-              <h3 className="font-semibold mb-4">Services</h3>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
+              <Typography.Heading size="sm" className="text-white mb-6">
+                Services
+              </Typography.Heading>
               <ul className="space-y-3">
-                {footerLinks.services.map((link) => (
-                  <li key={link.label}>
+                {footerLinks.services.map((link, index) => (
+                  <motion.li
+                    key={link.label}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
+                  >
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-white/70 hover:text-accent-cyan transition-colors duration-200 text-sm group flex items-center gap-2"
                     >
+                      <span className="w-1 h-1 bg-accent-cyan rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
                       {link.label}
                     </Link>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
             {/* Company */}
-            <div>
-              <h3 className="font-semibold mb-4">Company</h3>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              <Typography.Heading size="sm" className="text-white mb-6">
+                Company
+              </Typography.Heading>
               <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
-                  <li key={link.label}>
+                {footerLinks.company.map((link, index) => (
+                  <motion.li
+                    key={link.label}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
+                  >
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-white/70 hover:text-accent-cyan transition-colors duration-200 text-sm group flex items-center gap-2"
                     >
+                      <span className="w-1 h-1 bg-accent-cyan rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
                       {link.label}
                     </Link>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
             {/* Resources */}
-            <div>
-              <h3 className="font-semibold mb-4">Resources</h3>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              <Typography.Heading size="sm" className="text-white mb-6">
+                Resources
+              </Typography.Heading>
               <ul className="space-y-3">
-                {footerLinks.resources.map((link) => (
-                  <li key={link.label}>
+                {footerLinks.resources.map((link, index) => (
+                  <motion.li
+                    key={link.label}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5 + index * 0.1, duration: 0.4 }}
+                  >
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-white/70 hover:text-accent-cyan transition-colors duration-200 text-sm group flex items-center gap-2"
                     >
+                      <span className="w-1 h-1 bg-accent-cyan rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
                       {link.label}
                     </Link>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
 
         {/* Bottom Footer */}
-        <div className="py-6 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-muted-foreground">
-              <p>&copy; 2025 INNOBYTEX. All rights reserved.</p>
-              <div className="flex gap-4">
+        <motion.div
+          className="py-8 border-t border-white/10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+        >
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-white/60">
+              <div className="flex items-center gap-2">
+                <span>&copy; 2025 INNOBYTEX. All rights reserved.</span>
+                <span className="hidden md:inline">•</span>
+                <span className="flex items-center gap-1">
+                  Made with <Heart className="w-3 h-3 text-red-400" /> in
+                  Myanmar
+                </span>
+              </div>
+              <div className="flex gap-6">
                 <Link
                   href="/privacy"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-white/90 transition-colors duration-200"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href="/terms"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-white/90 transition-colors duration-200"
                 >
                   Terms of Service
                 </Link>
@@ -182,39 +307,43 @@ export function SiteFooter() {
             <div className="flex items-center gap-4">
               {/* Social Links */}
               <div className="flex gap-2">
-                {socialLinks.map((social) => (
-                  <Button
+                {socialLinks.map((social, index) => (
+                  <motion.div
                     key={social.label}
-                    variant="ghost"
-                    size="icon"
-                    asChild
-                    className="h-8 w-8"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.7 + index * 0.1, duration: 0.4 }}
                   >
-                    <a
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <IconButton
+                      icon={<social.icon className="h-4 w-4" />}
+                      variant="ghost"
+                      size="sm"
+                      className="text-white/70 hover:text-accent-cyan hover:bg-white/10"
                       aria-label={social.label}
-                    >
-                      <social.icon className="h-4 w-4" />
-                    </a>
-                  </Button>
+                      onClick={() => window.open(social.href, "_blank")}
+                    />
+                  </motion.div>
                 ))}
               </div>
 
               {/* Back to Top */}
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={scrollToTop}
-                className="h-8 w-8"
-                aria-label="Back to top"
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.8, duration: 0.4 }}
               >
-                <ArrowUp className="h-4 w-4" />
-              </Button>
+                <IconButton
+                  icon={<ArrowUp className="h-4 w-4" />}
+                  variant="ghost"
+                  size="sm"
+                  className="text-white/70 hover:text-accent-cyan hover:bg-white/10"
+                  onClick={scrollToTop}
+                  aria-label="Back to top"
+                />
+              </motion.div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

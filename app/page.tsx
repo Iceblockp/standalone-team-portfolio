@@ -8,9 +8,10 @@ import { Contact } from "@/components/site/sections/contact";
 import { SiteHeader } from "@/components/site/site-header";
 import { CustomCursor } from "@/components/site/custom-cursor";
 import { prisma } from "@/lib/prisma";
-import { TeamMember } from "@prisma/client";
 import { SiteFooter } from "@/components/site/site-footer";
 import { About } from "@/components/site/sections/about";
+import { ThemeProvider } from "@/components/theme/theme-provider";
+import { PageTransition } from "@/components/animations/motion-components";
 
 const defaultHero = {
   id: "placeholder",
@@ -285,18 +286,31 @@ export default async function Home() {
   }
 
   return (
-    <main className="min-h-screen">
-      <CustomCursor />
-      <SiteHeader />
-      <Hero data={heroData} />
-      <About data={aboutData} />
-      <Solutions data={solutions} />
-      <WorkProcess data={workProcess} />
-{/*       <Team data={teamMembers} /> */}
-      <Projects data={projects} />
-      <TechStack data={technologies} />
-      <Contact />
-      <SiteFooter />
-    </main>
+    <ThemeProvider defaultTheme="light" storageKey="innobytex-theme">
+      <PageTransition>
+        <main className="min-h-screen relative overflow-x-hidden">
+          {/* Global cursor */}
+          <CustomCursor />
+
+          {/* Navigation */}
+          <SiteHeader />
+
+          {/* Page sections with smooth transitions */}
+          <div className="relative">
+            <Hero data={heroData} />
+            <About data={aboutData} />
+            <Solutions data={solutions} />
+            <WorkProcess data={workProcess} />
+            <Team data={teamMembers} />
+            <Projects data={projects} />
+            <TechStack data={technologies} />
+            <Contact />
+          </div>
+
+          {/* Footer */}
+          <SiteFooter />
+        </main>
+      </PageTransition>
+    </ThemeProvider>
   );
 }
