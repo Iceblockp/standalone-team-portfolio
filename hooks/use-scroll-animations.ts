@@ -178,7 +178,7 @@ export function useScrollDirection() {
 }
 
 // Element scroll progress hook
-export function useElementScrollProgress(ref: RefObject<Element>) {
+export function useElementScrollProgress(ref: RefObject<HTMLElement>) {
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],

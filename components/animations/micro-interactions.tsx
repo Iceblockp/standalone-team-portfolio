@@ -14,7 +14,15 @@ import { cn } from "@/lib/utils";
 
 // Animated Button Component
 interface AnimatedButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends Omit<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    | "onDrag"
+    | "onDragEnd"
+    | "onDragStart"
+    | "onAnimationStart"
+    | "onAnimationEnd"
+    | "onAnimationIteration"
+  > {
   variant?: "primary" | "secondary" | "ghost" | "outline";
   size?: "sm" | "md" | "lg";
   loading?: boolean;
@@ -149,7 +157,15 @@ export function AnimatedButton({
 
 // Animated Input Component
 interface AnimatedInputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+  extends Omit<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    | "onDrag"
+    | "onDragEnd"
+    | "onDragStart"
+    | "onAnimationStart"
+    | "onAnimationEnd"
+    | "onAnimationIteration"
+  > {
   label?: string;
   error?: string;
   success?: boolean;

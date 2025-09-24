@@ -26,7 +26,7 @@ export interface GradientStop {
 
 export interface GradientConfig {
   direction: GradientDirection;
-  stops: GradientStop[];
+  stops: readonly GradientStop[];
 }
 
 /**

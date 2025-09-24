@@ -12,7 +12,15 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface ModernButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends Omit<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    | "onDrag"
+    | "onDragEnd"
+    | "onDragStart"
+    | "onAnimationStart"
+    | "onAnimationEnd"
+    | "onAnimationIteration"
+  > {
   variant?: "primary" | "secondary" | "ghost" | "outline" | "gradient";
   size?: "sm" | "md" | "lg" | "xl";
   loading?: boolean;
