@@ -40,7 +40,7 @@ function ModernLogo({ isScrolled }: { isScrolled: boolean }) {
           transition={{ duration: 0.3 }}
         >
           <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow group-hover:shadow-glow-purple transition-all duration-300">
-            <Sparkles className="w-4 h-4 text-white" />
+            <Sparkles className="w-4 h-4 text-primary-foreground" />
           </div>
 
           {/* Glow effect */}
@@ -207,7 +207,7 @@ export function SiteHeader() {
             >
               <Link
                 href="#contact"
-                className="px-4 py-2 bg-gradient-primary text-white text-sm font-medium rounded-lg shadow-md hover:shadow-button-hover transition-all duration-300"
+                className="px-4 py-2 bg-gradient-primary text-primary-foreground text-sm font-medium rounded-lg shadow-md hover:shadow-button-hover transition-all duration-300"
               >
                 Get Started
               </Link>
@@ -278,7 +278,7 @@ export function SiteHeader() {
                 <Link
                   href="#contact"
                   onClick={() => setIsOpen(false)}
-                  className="block w-full px-4 py-3 bg-gradient-primary text-white text-center font-medium rounded-lg shadow-md hover:shadow-button-hover transition-all duration-300"
+                  className="block w-full px-4 py-3 bg-gradient-primary text-primary-foreground text-center font-medium rounded-lg shadow-md hover:shadow-button-hover transition-all duration-300"
                 >
                   Get Started
                 </Link>

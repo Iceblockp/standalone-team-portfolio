@@ -57,7 +57,7 @@ function FeatureCard({
       whileHover={{ scale: 1.02, y: -2 }}
     >
       <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center group-hover:shadow-glow transition-all duration-300">
-        <Icon className="w-5 h-5 text-white" />
+        <Icon className="w-5 h-5 text-primary-foreground" />
       </div>
       <div className="flex-1">
         <Typography.Body

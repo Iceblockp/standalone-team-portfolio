@@ -61,7 +61,7 @@ function ContactInfoCard({
     >
       <div className="flex items-start gap-4">
         <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center shadow-lg group-hover:shadow-primary-500/30 transition-all duration-300">
-          <Icon className="w-6 h-6 text-white" />
+          <Icon className="w-6 h-6 text-primary-foreground" />
         </div>
         <div className="flex-1">
           <Typography.Heading
@@ -409,7 +409,7 @@ export function Contact() {
             </Typography.Body>
             <motion.a
               href="#"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-primary text-white rounded-lg font-medium shadow-lg hover:shadow-button-hover transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-primary text-primary-foreground rounded-lg font-medium shadow-lg hover:shadow-button-hover transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

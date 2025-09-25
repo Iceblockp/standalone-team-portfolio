@@ -301,7 +301,7 @@ export default async function Home() {
             <About data={aboutData} />
             <Solutions data={solutions} />
             <WorkProcess data={workProcess} />
-            <Team data={teamMembers} />
+            {/* <Team data={teamMembers} /> */}
             <Projects data={projects} />
             <TechStack data={technologies} />
             <Contact />

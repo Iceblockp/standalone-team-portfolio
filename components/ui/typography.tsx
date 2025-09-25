@@ -30,7 +30,7 @@ interface BaseTypographyProps {
 const colorClasses = {
   default: "text-foreground",
   muted: "text-muted-foreground",
-  primary: "text-primary-700",
+  primary: "text-primary-700 dark:text-primary-400",
   accent: "text-accent-cyan",
   success: "text-success",
   warning: "text-warning",

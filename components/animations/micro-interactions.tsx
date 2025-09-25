@@ -51,9 +51,9 @@ export function AnimatedButton({
 
   const variantClasses = {
     primary:
-      "bg-gradient-primary text-white hover:shadow-button-hover focus:ring-primary-500",
+      "bg-gradient-primary text-primary-foreground hover:shadow-button-hover focus:ring-primary-500",
     secondary:
-      "bg-gradient-secondary text-white hover:shadow-lg focus:ring-primary-500",
+      "bg-gradient-secondary text-primary-foreground hover:shadow-lg focus:ring-primary-500",
     ghost: "text-primary-700 hover:bg-primary-50 focus:ring-primary-500",
     outline:
       "border-2 border-primary-500 text-primary-700 hover:bg-primary-50 focus:ring-primary-500",

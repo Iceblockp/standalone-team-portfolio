@@ -156,7 +156,7 @@
 
     /* Shadcn/UI Compatible Variables - Light Theme */
     --background: 248 250 252; /* neutral-50 */
-    --foreground: 15 23 42; /* neutral-900 */
+    --foreground: 15 23 42; /* neutral-900 - Good contrast */
     --card: 255 255 255;
     --card-foreground: 15 23 42;
     --popover: 255 255 255;
@@ -166,7 +166,7 @@
     --secondary: 241 245 249; /* neutral-100 */
     --secondary-foreground: 15 23 42;
     --muted: 241 245 249;
-    --muted-foreground: 100 116 139; /* neutral-500 */
+    --muted-foreground: 215 16 47;
     --accent: 226 232 240; /* neutral-200 */
     --accent-foreground: 15 23 42;
     --destructive: 239 68 68; /* semantic-error */
@@ -231,7 +231,7 @@
     --secondary: 30 41 59; /* neutral-800 */
     --secondary-foreground: 248 250 252;
     --muted: 30 41 59;
-    --muted-foreground: 148 163 184; /* neutral-400 */
+    --muted-foreground: 71 85 105; /* neutral-400 */
     --accent: 51 65 85; /* neutral-700 */
     --accent-foreground: 248 250 252;
     --destructive: 220 38 38;
@@ -736,5 +736,18 @@
     100% {
       background-position: -200% 0;
     }
+  }
+
+  /* Text Contrast Utilities */
+  .text-high-contrast {
+    @apply text-neutral-900 dark:text-neutral-50;
+  }
+
+  .text-medium-contrast {
+    @apply text-neutral-700 dark:text-neutral-300;
+  }
+
+  .text-low-contrast {
+    @apply text-neutral-600 dark:text-neutral-400;
   }
 }

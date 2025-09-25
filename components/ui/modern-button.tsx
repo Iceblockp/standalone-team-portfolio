@@ -56,7 +56,7 @@ export function ModernButton({
 
   const variantClasses = {
     primary: cn(
-      "bg-primary-700 text-white hover:bg-primary-600",
+      "bg-primary-700 text-primary-foreground hover:bg-primary-600",
       "focus:ring-primary-500 shadow-md hover:shadow-lg",
       glow && "hover:shadow-glow"
     ),
@@ -76,7 +76,7 @@ export function ModernButton({
       "focus:ring-primary-500"
     ),
     gradient: cn(
-      "bg-gradient-primary text-white shadow-lg",
+      "bg-gradient-primary text-primary-foreground shadow-lg",
       "hover:shadow-button-hover focus:ring-primary-500",
       glow && "hover:shadow-glow"
     ),
