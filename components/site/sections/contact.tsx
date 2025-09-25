@@ -235,20 +235,20 @@ export function Contact() {
     {
       icon: Mail,
       title: "Email Us",
-      content: "hello@innobytex.com",
-      link: "mailto:hello@innobytex.com",
+      content: "office@innobytex.com",
+      link: "mailto:office@innobytex.com",
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      content: "+959 797 961 628",
+      link: "tel:+959797961628",
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "123 Innovation Street, Tech City, TC 12345",
-      link: "https://maps.google.com",
+      content: "Kun Ywe Street, Kyi Myin Daing Township, Yangon",
+      link: "https://maps.app.goo.gl/NhDF4Qse5u3fufTm6",
     },
     {
       icon: Clock,
