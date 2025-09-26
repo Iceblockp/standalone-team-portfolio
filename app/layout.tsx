@@ -17,23 +17,30 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className="bg-background"
-      style={{ scrollBehavior: "smooth" }}
+      className="bg-white dark:bg-neutral-950"
+      style={{ scrollBehavior: "smooth", overscrollBehavior: "none" }}
     >
       <head>
         <meta
           name="theme-color"
-          content="hsl(248 250 252)"
+          content="#ffffff"
           media="(prefers-color-scheme: light)"
         />
         <meta
           name="theme-color"
-          content="hsl(2 6 23)"
+          content="#020617"
           media="(prefers-color-scheme: dark)"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
         />
         <meta name="color-scheme" content="light dark" />
       </head>
-      <body className="bg-background text-foreground antialiased">
+      <body
+        className="bg-white dark:bg-neutral-950 text-foreground antialiased"
+        style={{ overscrollBehavior: "none" }}
+      >
         <SessionProvider>
           <QueryClientProvider client={queryClient}>
             <ThemeProvider

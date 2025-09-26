@@ -294,9 +294,21 @@
     /* iOS Safari specific fixes */
     html,
     body {
-      overscroll-behavior: none;
+      overscroll-behavior: none !important;
+      overscroll-behavior-y: none !important;
+      overscroll-behavior-x: none !important;
       -webkit-overflow-scrolling: touch;
-      background-color: hsl(var(--background)) !important;
+      background-color: #ffffff !important;
+      background: #ffffff !important;
+    }
+
+    /* Dark mode for iOS */
+    @media (prefers-color-scheme: dark) {
+      html,
+      body {
+        background-color: #020617 !important;
+        background: #020617 !important;
+      }
     }
   }
 
@@ -304,7 +316,18 @@
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     html,
     body {
-      background-color: hsl(var(--background)) !important;
+      background-color: #ffffff !important;
+      background: #ffffff !important;
+      overscroll-behavior: none !important;
+    }
+
+    /* Dark mode for Android */
+    @media (prefers-color-scheme: dark) {
+      html,
+      body {
+        background-color: #020617 !important;
+        background: #020617 !important;
+      }
     }
   }
 
@@ -315,7 +338,7 @@
     }
     html,
     body {
-      background-color: hsl(248 250 252) !important; /* neutral-50 */
+      background-color: #ffffff !important; /* Pure white for mobile */
     }
   }
 
@@ -325,7 +348,7 @@
     }
     html,
     body {
-      background-color: hsl(2 6 23) !important; /* neutral-950 */
+      background-color: #020617 !important; /* neutral-950 */
     }
   }
 
@@ -827,5 +850,50 @@
   .prevent-bounce {
     overscroll-behavior-y: none;
     overscroll-behavior-x: none;
+  }
+
+  /* Additional mobile-specific overscroll fixes */
+  @media only screen and (max-width: 768px) {
+    html,
+    body {
+      overscroll-behavior: none !important;
+      overscroll-behavior-y: none !important;
+      overscroll-behavior-x: none !important;
+      background-color: #ffffff !important;
+      background: #ffffff !important;
+      -webkit-background-size: auto !important;
+      background-size: auto !important;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html,
+      body {
+        background-color: #020617 !important;
+        background: #020617 !important;
+      }
+    }
+  }
+
+  /* Webkit-specific mobile fixes */
+  @media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+    html {
+      background-color: #ffffff !important;
+      background: #ffffff !important;
+    }
+
+    body {
+      background-color: #ffffff !important;
+      background: #ffffff !important;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html,
+      body {
+        background-color: #020617 !important;
+        background: #020617 !important;
+      }
+    }
   }
 }

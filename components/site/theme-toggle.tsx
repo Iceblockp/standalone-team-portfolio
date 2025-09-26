@@ -6,7 +6,7 @@ import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-export function ThemeToggle() {
+export function ThemeToggle({ isScrolled = true }: { isScrolled?: boolean }) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -31,7 +31,9 @@ export function ThemeToggle() {
         "hover:scale-105 active:scale-95",
         isDark
           ? "bg-neutral-800 hover:bg-neutral-700 text-accent-cyan"
-          : "bg-neutral-100 hover:bg-neutral-200 text-neutral-700"
+          : isScrolled
+          ? "bg-neutral-100 hover:bg-neutral-200 text-neutral-700"
+          : "bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm"
       )}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       whileHover={{ scale: 1.05 }}

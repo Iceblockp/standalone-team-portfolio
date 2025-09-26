@@ -70,11 +70,13 @@ function NavLink({
   label,
   icon,
   onClick,
+  isScrolled,
 }: {
   href: string;
   label: string;
   icon: string;
   onClick?: () => void;
+  isScrolled: boolean;
 }) {
   const [isActive, setIsActive] = useState(false);
 
@@ -104,8 +106,12 @@ function NavLink({
           "relative flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300",
           "text-sm font-medium",
           isActive
-            ? "text-primary-700 bg-primary-50 dark:text-primary-400 dark:bg-primary-950"
-            : "text-neutral-800 hover:text-neutral-900 hover:bg-neutral-100/80 dark:text-neutral-200 dark:hover:text-neutral-100 dark:hover:bg-neutral-800/80"
+            ? isScrolled
+              ? "text-primary-700 bg-primary-50 dark:text-primary-400 dark:bg-primary-950"
+              : "text-primary-300 bg-primary-900/20 dark:text-primary-400 dark:bg-primary-950"
+            : isScrolled
+            ? "text-neutral-800 hover:text-neutral-900 hover:bg-neutral-100/80 dark:text-neutral-200 dark:hover:text-neutral-100 dark:hover:bg-neutral-800/80"
+            : "text-white hover:text-primary-200 hover:bg-white/10 dark:text-neutral-200 dark:hover:text-neutral-100 dark:hover:bg-neutral-800/80"
         )}
       >
         <span className="text-xs">{icon}</span>
@@ -191,13 +197,14 @@ export function SiteHeader() {
                 href={item.href}
                 label={item.label}
                 icon={item.icon}
+                isScrolled={isScrolled}
               />
             ))}
           </nav>
 
           {/* Right side actions */}
           <div className="flex items-center gap-3">
-            <ThemeToggle />
+            <ThemeToggle isScrolled={isScrolled} />
 
             {/* CTA Button - hidden on mobile */}
             <motion.div
@@ -227,7 +234,10 @@ export function SiteHeader() {
                 variant="ghost"
                 size="md"
                 aria-label={isOpen ? "Close menu" : "Open menu"}
-                className="relative"
+                className={cn(
+                  "relative",
+                  !isScrolled && "text-white hover:bg-white/10"
+                )}
               />
             </div>
           </div>
@@ -263,6 +273,7 @@ export function SiteHeader() {
                       label={item.label}
                       icon={item.icon}
                       onClick={() => setIsOpen(false)}
+                      isScrolled={isScrolled}
                     />
                   </motion.div>
                 ))}
