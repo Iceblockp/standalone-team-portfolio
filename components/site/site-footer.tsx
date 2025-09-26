@@ -120,7 +120,7 @@ export function SiteFooter() {
                     <Sparkles className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-2xl font-bold font-secondary">
-                    INNO<span className="text-accent-orange">BYTEX</span>
+                    INNO<span className="text-accent-cyan">BYTEX</span>
                   </span>
                 </div>
               </Link>

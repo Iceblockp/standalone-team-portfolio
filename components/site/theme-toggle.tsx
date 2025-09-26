@@ -30,7 +30,7 @@ export function ThemeToggle() {
         "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500",
         "hover:scale-105 active:scale-95",
         isDark
-          ? "bg-neutral-800 hover:bg-neutral-700 text-yellow-400"
+          ? "bg-neutral-800 hover:bg-neutral-700 text-accent-cyan"
           : "bg-neutral-100 hover:bg-neutral-200 text-neutral-700"
       )}
       onClick={() => setTheme(isDark ? "light" : "dark")}
@@ -42,7 +42,7 @@ export function ThemeToggle() {
       <motion.div
         className={cn(
           "absolute inset-0 rounded-lg blur-md opacity-0 transition-opacity duration-300",
-          isDark ? "bg-yellow-400/20" : "bg-blue-500/20"
+          isDark ? "bg-accent-cyan/20" : "bg-blue-500/20"
         )}
         animate={{ opacity: isDark ? 0.3 : 0.2 }}
       />
@@ -116,7 +116,7 @@ export function ThemeToggleSwitch() {
       <motion.div
         className={cn(
           "absolute top-0.5 w-5 h-5 rounded-full shadow-md flex items-center justify-center",
-          isDark ? "bg-yellow-400" : "bg-white"
+          isDark ? "bg-accent-cyan" : "bg-white"
         )}
         animate={{
           x: isDark ? 24 : 2,
@@ -136,7 +136,7 @@ export function ThemeToggleSwitch() {
               exit={{ scale: 0, rotate: 180 }}
               transition={{ duration: 0.2 }}
             >
-              <Sun className="w-3 h-3 text-yellow-600" />
+              <Sun className="w-3 h-3 text-neutral-800" />
             </motion.div>
           ) : (
             <motion.div

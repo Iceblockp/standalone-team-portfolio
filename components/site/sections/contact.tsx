@@ -5,18 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Clock,
-  Send,
-  MessageCircle,
-  Calendar,
-  Globe,
-  ArrowRight,
-  CheckCircle,
-} from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
 import { Typography } from "@/components/ui/typography";
 import {
   AnimatedInput,
@@ -170,11 +159,11 @@ function ContactForm() {
           </label>
           <motion.textarea
             className={cn(
-              "w-full px-4 py-3 border-2 rounded-lg bg-background transition-colors duration-200 min-h-[120px] resize-none",
+              "w-full px-4 py-3 border-2 rounded-lg bg-white dark:bg-neutral-800 transition-colors duration-200 min-h-[120px] resize-none",
               "focus:outline-none focus:ring-0",
               form.formState.errors.message
                 ? "border-error text-error"
-                : "border-neutral-300 focus:border-primary-500"
+                : "border-neutral-300 focus:border-primary-500 dark:border-neutral-600 dark:focus:border-primary-400"
             )}
             placeholder="Tell us about your project..."
             {...form.register("message")}
@@ -247,8 +236,9 @@ export function Contact() {
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "Kun Ywe Street, Kyi Myin Daing Township, Yangon",
-      link: "https://maps.app.goo.gl/NhDF4Qse5u3fufTm6",
+      content:
+        "No.Nga-4/89, 64th St 108 & 109 St, ChanMyathazi Township, Mandalay , Myanmar",
+      link: "https://maps.app.goo.gl/5LmcP2XW5DzNv7GTA",
     },
     {
       icon: Clock,
@@ -362,7 +352,7 @@ export function Contact() {
             </div>
 
             {/* Social Links */}
-            <motion.div
+            {/* <motion.div
               className="pt-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -388,7 +378,7 @@ export function Contact() {
                   </motion.a>
                 ))}
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
 
           {/* Right Side - Contact Form */}
@@ -398,7 +388,7 @@ export function Contact() {
         </div>
 
         {/* Bottom CTA */}
-        <ScrollReveal type="up">
+        {/* <ScrollReveal type="up">
           <div className="mt-20 text-center glass-card p-8 rounded-2xl">
             <Typography.Heading size="lg" className="mb-4">
               Prefer to Schedule a Call?
@@ -418,7 +408,7 @@ export function Contact() {
               <ArrowRight className="w-4 h-4" />
             </motion.a>
           </div>
-        </ScrollReveal>
+        </ScrollReveal> */}
       </div>
     </section>
   );

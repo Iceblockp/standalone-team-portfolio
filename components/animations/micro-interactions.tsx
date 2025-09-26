@@ -196,13 +196,13 @@ export function AnimatedInput({
       >
         <motion.input
           className={cn(
-            "w-full px-4 py-3 border-2 rounded-lg bg-background transition-colors duration-200",
+            "w-full px-4 py-3 border-2 rounded-lg bg-white dark:bg-neutral-800 transition-colors duration-200",
             "focus:outline-none focus:ring-0",
             error
               ? "border-error text-error"
               : success
               ? "border-success"
-              : "border-neutral-300 focus:border-primary-500",
+              : "border-neutral-300 focus:border-primary-500 dark:border-neutral-600 dark:focus:border-primary-400",
             className
           )}
           onFocus={handleFocus}
@@ -408,7 +408,7 @@ export function AnimatedCard({
   return (
     <motion.div
       className={cn(
-        "rounded-lg bg-card border border-border p-6 transition-colors duration-200",
+        "rounded-lg bg-white dark:bg-slate-800 border border-border p-6 transition-colors duration-200",
         clickable && "cursor-pointer",
         className
       )}

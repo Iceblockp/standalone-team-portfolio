@@ -109,7 +109,7 @@ function TeamMemberCard({
   return (
     <motion.div
       className={cn(
-        "group relative bg-card rounded-2xl overflow-hidden border border-border/50",
+        "group relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-border/50",
         "hover:border-primary-200 dark:hover:border-primary-800 transition-all duration-500",
         "hover:shadow-2xl hover:shadow-primary-500/10",
         getCardVariant()

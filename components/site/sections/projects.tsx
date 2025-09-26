@@ -103,7 +103,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <motion.div
       className={cn(
-        "group relative overflow-hidden rounded-2xl bg-card border border-border/50",
+        "group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-border/50",
         "hover:border-primary-200 dark:hover:border-primary-800 transition-all duration-500",
         getCardSize()
       )}

@@ -12,7 +12,7 @@ import {
 import { Menu, X, Sparkles } from "lucide-react";
 import { IconButton } from "@/components/ui/modern-button";
 import { ThemeToggle } from "@/components/site/theme-toggle";
-import { Typography } from "@/components/ui/typography";
+
 import { useScrollDirection } from "@/hooks/use-scroll-animations";
 
 const navItems = [
@@ -56,7 +56,7 @@ function ModernLogo({ isScrolled }: { isScrolled: boolean }) {
           transition={{ duration: 0.3 }}
         >
           <span className="gradient-text-primary">
-            INNO<span className="text-accent-orange">BYTEX</span>
+            INNO<span className="text-accent-cyan">BYTEX</span>
           </span>
         </motion.div>
       </motion.div>
@@ -105,7 +105,7 @@ function NavLink({
           "text-sm font-medium",
           isActive
             ? "text-primary-700 bg-primary-50 dark:text-primary-400 dark:bg-primary-950"
-            : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
+            : "text-neutral-800 hover:text-neutral-900 hover:bg-neutral-100/80 dark:text-neutral-200 dark:hover:text-neutral-100 dark:hover:bg-neutral-800/80"
         )}
       >
         <span className="text-xs">{icon}</span>
@@ -242,7 +242,7 @@ export function SiteHeader() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden glass-card border-t border-white/10"
+            className="lg:hidden glass-header border-t border-neutral-200/50 dark:border-neutral-700/50"
           >
             <div className="container mx-auto px-4 py-6">
               {/* Mobile navigation links */}
@@ -270,7 +270,7 @@ export function SiteHeader() {
 
               {/* Mobile CTA */}
               <motion.div
-                className="mt-6 pt-6 border-t border-white/10"
+                className="mt-6 pt-6 border-t border-neutral-200/50 dark:border-neutral-700/50"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.4 }}

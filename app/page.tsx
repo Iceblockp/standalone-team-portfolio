@@ -288,7 +288,7 @@ export default async function Home() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="innobytex-theme">
       <PageTransition>
-        <main className="min-h-screen relative overflow-x-hidden">
+        <main className="min-h-screen relative overflow-x-hidden no-overscroll bg-background">
           {/* Global cursor */}
           <CustomCursor />
 

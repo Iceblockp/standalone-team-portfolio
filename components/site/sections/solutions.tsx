@@ -54,7 +54,7 @@ function SolutionCard({
       "from-primary-50 to-accent-cyan/10 border-primary-200/50",
       "from-accent-purple/10 to-primary-50 border-accent-purple/20",
       "from-accent-green/10 to-primary-50 border-accent-green/20",
-      "from-accent-orange/10 to-primary-50 border-accent-orange/20",
+      "from-accent-green/10 to-primary-50 border-accent-green/20",
       "from-primary-100/50 to-accent-cyan/5 border-primary-300/30",
       "from-accent-purple/5 to-primary-100/50 border-accent-purple/30",
     ];
@@ -66,7 +66,7 @@ function SolutionCard({
       "text-primary-600",
       "text-accent-purple",
       "text-accent-green",
-      "text-accent-orange",
+      "text-accent-green",
       "text-primary-700",
       "text-accent-purple",
     ];
@@ -78,7 +78,7 @@ function SolutionCard({
       "shadow-primary-500/20",
       "shadow-accent-purple/20",
       "shadow-accent-green/20",
-      "shadow-accent-orange/20",
+      "shadow-accent-green/20",
       "shadow-primary-600/20",
       "shadow-accent-purple/20",
     ];

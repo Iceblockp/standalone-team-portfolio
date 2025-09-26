@@ -57,8 +57,8 @@ function ProcessStepCard({
       glow: "shadow-accent-green/30",
     },
     {
-      bg: "from-accent-orange to-accent-orange/80",
-      glow: "shadow-accent-orange/30",
+      bg: "from-accent-green to-accent-green/80",
+      glow: "shadow-accent-green/30",
     },
   ];
 
@@ -71,7 +71,7 @@ function ProcessStepCard({
         "p-6 rounded-2xl border transition-all duration-500",
         isActive
           ? "bg-gradient-to-br from-white to-primary-50/50 dark:from-neutral-800 dark:to-primary-950/50 border-primary-300 dark:border-primary-700 shadow-xl"
-          : "bg-card hover:bg-gradient-to-br hover:from-white hover:to-primary-50/30 dark:hover:from-neutral-800 dark:hover:to-primary-950/30 border-border hover:border-primary-200 dark:hover:border-primary-800"
+          : "bg-white dark:bg-slate-800 hover:bg-gradient-to-br hover:from-white hover:to-primary-50/30 dark:hover:from-slate-700 dark:hover:to-slate-800 border-gray-200 dark:border-slate-600 hover:border-primary-200 dark:hover:border-primary-800"
       )}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -84,13 +84,19 @@ function ProcessStepCard({
         <motion.div
           className={cn(
             "relative w-16 h-16 rounded-xl bg-gradient-to-br flex items-center justify-center shadow-lg",
-            colorScheme.bg,
-            isActive && colorScheme.glow
+            isActive
+              ? `${colorScheme.bg} ${colorScheme.glow}`
+              : "bg-neutral-200 dark:bg-neutral-700"
           )}
           animate={isActive ? { scale: 1.1 } : { scale: 1 }}
           transition={{ duration: 0.3 }}
         >
-          <Icon className="w-8 h-8 text-white" />
+          <Icon
+            className={cn(
+              "w-8 h-8",
+              isActive ? "text-white" : "text-neutral-600 dark:text-neutral-300"
+            )}
+          />
 
           {/* Step number badge */}
           <div className="absolute -top-2 -right-2 w-6 h-6 bg-white dark:bg-neutral-800 rounded-full flex items-center justify-center text-xs font-bold text-primary-600 border-2 border-primary-200 dark:border-primary-800">
@@ -246,7 +252,7 @@ export function WorkProcess({ data }: WorkProcessProps) {
   return (
     <section
       id="process"
-      className="relative py-20 bg-neutral-50/50 dark:bg-neutral-900/50 overflow-hidden"
+      className="relative py-20 bg-gradient-background-light dark:bg-gradient-background-dark overflow-hidden"
     >
       {/* Floating elements */}
       <SectionFloatingElements density="low" colors="primary" />

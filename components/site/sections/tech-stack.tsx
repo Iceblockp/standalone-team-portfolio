@@ -222,7 +222,7 @@ export function TechStack({ data }: TechStackProps) {
     {
       title: "Cloud & DevOps",
       icon: Cloud,
-      color: "orange",
+      color: "green",
       technologies: sortedTechnologies.filter((tech) =>
         ["AWS", "Docker", "Kubernetes", "Vercel"].includes(tech.name)
       ),
