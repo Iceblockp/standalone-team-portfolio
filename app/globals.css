@@ -246,7 +246,7 @@
   }
 
   html {
-    @apply bg-background;
+    /* @apply bg-background; */
     /* Prevent overscroll bounce on iOS */
     overscroll-behavior: none;
     /* Ensure consistent background across devices */
@@ -255,7 +255,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-primary;
+    @apply text-foreground font-primary;
     font-feature-settings: "rlig" 1, "calt" 1;
     /* Prevent overscroll bounce */
     overscroll-behavior: none;

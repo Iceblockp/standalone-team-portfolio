@@ -17,7 +17,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className="bg-white dark:bg-neutral-950"
+      // className="bg-white dark:bg-neutral-950"
       style={{ scrollBehavior: "smooth", overscrollBehavior: "none" }}
     >
       <head>
