@@ -323,7 +323,7 @@ export function Solutions({ data }: SolutionsProps) {
         </div>
 
         {/* Process Section */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <ScrollReveal type="up">
             <div className="text-center mb-12">
               <Typography.Heading size="xl" className="mb-4">
@@ -347,7 +347,7 @@ export function Solutions({ data }: SolutionsProps) {
           >
             <ProcessSteps />
           </motion.div>
-        </div>
+        </div> */}
 
         {/* Call to Action */}
         {/* <ScrollReveal type="up">

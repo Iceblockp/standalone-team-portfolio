@@ -153,7 +153,7 @@ function ProcessTimeline({ data }: { data: WorkProcessStep[] }) {
   return (
     <div className="space-y-8">
       {/* Timeline header */}
-      <div className="text-center mb-12">
+      {/* <div className="text-center mb-12">
         <Typography.Heading size="lg" className="mb-4">
           Our Proven Methodology
         </Typography.Heading>
@@ -161,7 +161,7 @@ function ProcessTimeline({ data }: { data: WorkProcessStep[] }) {
           Each project follows our structured approach, ensuring consistent
           quality and timely delivery.
         </Typography.Body>
-      </div>
+      </div> */}
 
       {/* Interactive timeline */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -177,7 +177,8 @@ function ProcessTimeline({ data }: { data: WorkProcessStep[] }) {
       </div>
 
       {/* Timeline details */}
-      <motion.div
+
+      {/* <motion.div
         className="glass-card p-8 rounded-2xl"
         key={activeStep}
         initial={{ opacity: 0, y: 20 }}
@@ -239,12 +240,12 @@ function ProcessTimeline({ data }: { data: WorkProcessStep[] }) {
             </div>
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }
 
-function ProcessSteps() {
+const ProcessSteps = () => {
   const steps = [
     {
       number: "01",
@@ -310,7 +311,7 @@ function ProcessSteps() {
       ))}
     </div>
   );
-}
+};
 
 export function WorkProcess({ data }: WorkProcessProps) {
   const sectionRef = useRef(null);
@@ -353,33 +354,6 @@ export function WorkProcess({ data }: WorkProcessProps) {
             </Typography.Body>
           </ScrollReveal>
 
-          {/* Process Section */}
-          <div className="mb-16 mt-16">
-            {/* <ScrollReveal type="up">
-              <div className="text-center mb-12">
-                <Typography.Heading size="xl" className="mb-4">
-                  Our Process
-                </Typography.Heading>
-                <Typography.Body
-                  size="lg"
-                  color="muted"
-                  className="max-w-2xl mx-auto"
-                >
-                  From concept to launch, we follow a proven methodology that
-                  ensures successful project delivery every time.
-                </Typography.Body>
-              </div>
-            </ScrollReveal> */}
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-            >
-              <ProcessSteps />
-            </motion.div>
-          </div>
-
           {/* Process stats */}
           {/* <motion.div
             className="flex justify-center gap-8 text-center"
@@ -415,7 +389,7 @@ export function WorkProcess({ data }: WorkProcessProps) {
         </div>
 
         {/* Process Timeline */}
-        {/* <div ref={sectionRef}>
+        <div ref={sectionRef}>
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -423,7 +397,7 @@ export function WorkProcess({ data }: WorkProcessProps) {
           >
             <ProcessTimeline data={sortedSteps} />
           </motion.div>
-        </div> */}
+        </div>
 
         {/* Why Choose Our Process */}
         {/* <ScrollReveal type="up">
