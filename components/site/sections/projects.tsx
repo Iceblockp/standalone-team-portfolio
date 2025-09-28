@@ -335,7 +335,7 @@ export function Projects({ data }: ProjectsProps) {
         </div>
 
         {/* Call to Action */}
-        <motion.div
+        {/* <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -353,7 +353,7 @@ export function Projects({ data }: ProjectsProps) {
           >
             Start Your Project
           </ModernButton>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

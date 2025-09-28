@@ -282,7 +282,7 @@ export function Contact() {
           </ScrollReveal>
 
           {/* Quick stats */}
-          <motion.div
+          {/* <motion.div
             className="flex justify-center gap-8 text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -312,7 +312,7 @@ export function Contact() {
                 Years Experience
               </Typography.Body>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Split Layout */}

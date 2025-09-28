@@ -12,6 +12,8 @@ import {
   Code,
   Rocket,
   Target,
+  Zap,
+  Globe,
 } from "lucide-react";
 import { Typography } from "@/components/ui/typography";
 import { ScrollReveal } from "@/components/animations/motion-components";
@@ -242,6 +244,74 @@ function ProcessTimeline({ data }: { data: WorkProcessStep[] }) {
   );
 }
 
+function ProcessSteps() {
+  const steps = [
+    {
+      number: "01",
+      title: "Discovery",
+      description: "We analyze your needs and define project requirements",
+      icon: Users,
+    },
+    {
+      number: "02",
+      title: "Strategy",
+      description: "We create a comprehensive plan and technical roadmap",
+      icon: Zap,
+    },
+    {
+      number: "03",
+      title: "Development",
+      description: "We build your solution using cutting-edge technologies",
+      icon: Code,
+    },
+    {
+      number: "04",
+      title: "Launch",
+      description: "We deploy and provide ongoing support for your project",
+      icon: Globe,
+    },
+  ];
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {steps.map((step, index) => (
+        <motion.div
+          key={step.number}
+          className="relative text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1, duration: 0.5 }}
+        >
+          {/* Connection line */}
+          {index < steps.length - 1 && (
+            <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-gradient-to-r from-primary-300 to-transparent z-0" />
+          )}
+
+          <div className="relative z-10">
+            {/* Step number */}
+            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold text-lg shadow-lg">
+              {step.number}
+            </div>
+
+            {/* Step icon */}
+            <div className="w-10 h-10 mx-auto mb-3 rounded-lg bg-primary-50 dark:bg-primary-950 flex items-center justify-center">
+              <step.icon className="w-5 h-5 text-primary-600" />
+            </div>
+
+            <Typography.Heading size="sm" className="mb-2">
+              {step.title}
+            </Typography.Heading>
+
+            <Typography.Body size="sm" color="muted">
+              {step.description}
+            </Typography.Body>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
 export function WorkProcess({ data }: WorkProcessProps) {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
@@ -283,8 +353,35 @@ export function WorkProcess({ data }: WorkProcessProps) {
             </Typography.Body>
           </ScrollReveal>
 
+          {/* Process Section */}
+          <div className="mb-16 mt-16">
+            {/* <ScrollReveal type="up">
+              <div className="text-center mb-12">
+                <Typography.Heading size="xl" className="mb-4">
+                  Our Process
+                </Typography.Heading>
+                <Typography.Body
+                  size="lg"
+                  color="muted"
+                  className="max-w-2xl mx-auto"
+                >
+                  From concept to launch, we follow a proven methodology that
+                  ensures successful project delivery every time.
+                </Typography.Body>
+              </div>
+            </ScrollReveal> */}
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+            >
+              <ProcessSteps />
+            </motion.div>
+          </div>
+
           {/* Process stats */}
-          <motion.div
+          {/* <motion.div
             className="flex justify-center gap-8 text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -314,11 +411,11 @@ export function WorkProcess({ data }: WorkProcessProps) {
                 Client Satisfaction
               </Typography.Body>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Process Timeline */}
-        <div ref={sectionRef}>
+        {/* <div ref={sectionRef}>
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -326,10 +423,10 @@ export function WorkProcess({ data }: WorkProcessProps) {
           >
             <ProcessTimeline data={sortedSteps} />
           </motion.div>
-        </div>
+        </div> */}
 
         {/* Why Choose Our Process */}
-        <ScrollReveal type="up">
+        {/* <ScrollReveal type="up">
           <div className="mt-20 text-center">
             <Typography.Heading size="lg" className="mb-8">
               Why Our Process Works
@@ -377,7 +474,7 @@ export function WorkProcess({ data }: WorkProcessProps) {
               ))}
             </div>
           </div>
-        </ScrollReveal>
+        </ScrollReveal> */}
       </div>
     </section>
   );

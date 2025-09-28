@@ -274,10 +274,10 @@ export function TechStack({ data }: TechStackProps) {
       className="relative py-20 bg-gradient-background-light dark:bg-gradient-background-dark overflow-hidden"
     >
       {/* Floating tech icons */}
-      <FloatingTechIcons technologies={sortedTechnologies} />
+      {/* <FloatingTechIcons technologies={sortedTechnologies} /> */}
 
       {/* Floating elements */}
-      <SectionFloatingElements density="low" colors="accent" />
+      {/* <SectionFloatingElements density="low" colors="accent" /> */}
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
@@ -306,7 +306,7 @@ export function TechStack({ data }: TechStackProps) {
           </ScrollReveal>
 
           {/* Tech stats */}
-          <motion.div
+          {/* <motion.div
             className="flex justify-center gap-8 text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -336,11 +336,11 @@ export function TechStack({ data }: TechStackProps) {
                 Modern Stack
               </Typography.Body>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Tech Categories */}
-        <div ref={sectionRef} className="mb-16">
+        {/* <div ref={sectionRef} className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categories.map((category, index) => (
               <TechCategory
@@ -353,15 +353,15 @@ export function TechStack({ data }: TechStackProps) {
               />
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* All Technologies Showcase */}
         {sortedTechnologies.length > 0 && (
           <ScrollReveal type="up">
             <div className="glass-card p-8 rounded-2xl">
-              <Typography.Heading size="lg" className="text-center mb-8">
+              {/* <Typography.Heading size="lg" className="text-center mb-8">
                 Complete Technology Arsenal
-              </Typography.Heading>
+              </Typography.Heading> */}
 
               <motion.div
                 className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6"

@@ -333,13 +333,13 @@ export function About({ data }: AboutProps) {
         </div>
 
         {/* Stats Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <StatsSection />
-        </motion.div>
+        </motion.div> */}
 
         {/* Values Section */}
         <div className="mb-16">
@@ -369,7 +369,7 @@ export function About({ data }: AboutProps) {
         </div>
 
         {/* Skills Progress Bars */}
-        <ScrollReveal type="up">
+        {/* <ScrollReveal type="up">
           <div className="glass-card p-8 rounded-2xl">
             <Typography.Heading size="lg" className="mb-8 text-center">
               Our Expertise
@@ -402,7 +402,7 @@ export function About({ data }: AboutProps) {
               ))}
             </div>
           </div>
-        </ScrollReveal>
+        </ScrollReveal> */}
       </div>
     </section>
   );

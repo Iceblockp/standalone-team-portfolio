@@ -350,7 +350,7 @@ export function Solutions({ data }: SolutionsProps) {
         </div>
 
         {/* Call to Action */}
-        <ScrollReveal type="up">
+        {/* <ScrollReveal type="up">
           <div className="text-center glass-card p-8 rounded-2xl">
             <Typography.Heading size="lg" className="mb-4">
               Ready to Get Started?
@@ -378,7 +378,7 @@ export function Solutions({ data }: SolutionsProps) {
               </ModernButton>
             </div>
           </div>
-        </ScrollReveal>
+        </ScrollReveal> */}
       </div>
     </section>
   );

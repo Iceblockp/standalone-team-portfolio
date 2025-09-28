@@ -18,6 +18,7 @@ import { Typography } from "@/components/ui/typography";
 import { IconButton, ModernButton } from "@/components/ui/modern-button";
 import { ScrollReveal } from "@/components/animations/motion-components";
 import { MinimalFloatingElements } from "@/components/ui/floating-elements";
+import Image from "next/image";
 
 const footerLinks = {
   services: [
@@ -69,7 +70,7 @@ export function SiteFooter() {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Newsletter Section */}
-        <ScrollReveal type="up">
+        {/* <ScrollReveal type="up">
           <div className="py-16 border-b border-white/10">
             <div className="max-w-4xl mx-auto text-center">
               <div className="flex items-center justify-center gap-2 mb-4">
@@ -102,7 +103,7 @@ export function SiteFooter() {
               </div>
             </div>
           </div>
-        </ScrollReveal>
+        </ScrollReveal> */}
 
         {/* Main Footer Content */}
         <div className="py-16">
@@ -116,8 +117,15 @@ export function SiteFooter() {
             >
               <Link href="/" className="inline-block mb-6 group">
                 <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shadow-lg group-hover:shadow-glow transition-all duration-300">
-                    <Sparkles className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 rounded-lg  flex items-center justify-center shadow-lg group-hover:shadow-glow transition-all duration-300">
+                    {/* <Sparkles className="w-5 h-5 text-white" /> */}
+                    <Image
+                      src={"/images/icon.png"}
+                      alt="logo"
+                      width={400}
+                      height={400}
+                      className=" w-10 h-10"
+                    />
                   </div>
                   <span className="text-2xl font-bold font-secondary">
                     INNO<span className="text-accent-cyan">BYTEX</span>

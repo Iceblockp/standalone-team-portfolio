@@ -255,7 +255,7 @@
   }
 
   body {
-    @apply text-foreground font-primary;
+    @apply bg-white text-foreground font-primary;
     font-feature-settings: "rlig" 1, "calt" 1;
     /* Prevent overscroll bounce */
     overscroll-behavior: none;

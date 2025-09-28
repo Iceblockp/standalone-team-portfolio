@@ -14,11 +14,12 @@ import { IconButton } from "@/components/ui/modern-button";
 import { ThemeToggle } from "@/components/site/theme-toggle";
 
 import { useScrollDirection } from "@/hooks/use-scroll-animations";
+import Image from "next/image";
 
 const navItems = [
   { href: "#solutions", label: "Solutions", icon: "💡" },
   { href: "#process", label: "Process", icon: "⚡" },
-  { href: "#team", label: "Team", icon: "👥" },
+  // { href: "#team", label: "Team", icon: "👥" },
   { href: "#projects", label: "Projects", icon: "🚀" },
   { href: "#tech", label: "Tech", icon: "⚙️" },
   { href: "#contact", label: "Contact", icon: "📧" },
@@ -39,8 +40,15 @@ function ModernLogo({ isScrolled }: { isScrolled: boolean }) {
           animate={isScrolled ? { scale: 0.9 } : { scale: 1 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow group-hover:shadow-glow-purple transition-all duration-300">
-            <Sparkles className="w-4 h-4 text-primary-foreground" />
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center shadow-glow group-hover:shadow-glow-purple transition-all duration-300">
+            {/* <Sparkles className="w-4 h-4 text-primary-foreground" /> */}
+            <Image
+              src={"/images/icon.png"}
+              alt="logo"
+              width={400}
+              height={400}
+              className=" w-8 h-8"
+            />
           </div>
 
           {/* Glow effect */}
