@@ -50,10 +50,10 @@ export default function TermsPage() {
                     1. Agreement to Terms
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    By accessing and using StudioFlow's website and services,
-                    you accept and agree to be bound by the terms and provision
-                    of this agreement. If you do not agree to abide by the
-                    above, please do not use this service.
+                    By accessing and using innobytex's website and services, you
+                    accept and agree to be bound by the terms and provision of
+                    this agreement. If you do not agree to abide by the above,
+                    please do not use this service.
                   </p>
                 </section>
 
@@ -62,8 +62,8 @@ export default function TermsPage() {
                     2. Services Description
                   </h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    StudioFlow provides digital agency services including but
-                    not limited to:
+                    Innobytex provides digital agency services including but not
+                    limited to:
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2">
                     <li>Web development and design</li>
@@ -119,7 +119,7 @@ export default function TermsPage() {
                   <p className="text-muted-foreground leading-relaxed">
                     Upon full payment, clients receive ownership of the final
                     deliverables created specifically for their project.
-                    However, StudioFlow retains the right to use general
+                    However, Innobytex retains the right to use general
                     methodologies, techniques, and knowledge gained during the
                     project for future work. We also retain the right to
                     showcase completed work in our portfolio unless otherwise
@@ -132,7 +132,7 @@ export default function TermsPage() {
                     6. Limitation of Liability
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    StudioFlow shall not be liable for any indirect, incidental,
+                    Innobytex shall not be liable for any indirect, incidental,
                     special, consequential, or punitive damages, including
                     without limitation, loss of profits, data, use, goodwill, or
                     other intangible losses, resulting from your use of our
